@@ -10,11 +10,16 @@
     "sass-watch": "sass --watch ."
   },
   "dependencies": {
+    "@getbrevo/brevo": "^3.0.1",
+    "dotenv": "^17.3.1",
     "next": "16.1.6",
+    "nodemailer": "^8.0.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-simple-typewriter": "^5.0.1"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

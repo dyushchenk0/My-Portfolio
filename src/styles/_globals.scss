@@ -1,12 +1,27 @@
 @use 'helpers' as *;
 
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
 body {
+  padding-top: 160px;
+
   @include fluid-text(18, 24);
+
+  display: flex;
+  flex-direction: column;
 
   font-family: var(--font-family-bace);
   letter-spacing: -0.03em;
   color: var(--color-dark-10);
   background-color: var(--color-light);
+}
+
+main {
+  flex-grow: 1;
 }
 
 h1, .h1,
@@ -59,10 +74,12 @@ svg * {
 }
 
 a {
+  display: inline-block;
   color: inherit;
+  transition: transform var(--transition-duration) ease;
 
   @include hover {
-//    color: ;
+    transform: scale(1.05);
   }
 
   &[class] {
@@ -74,4 +91,18 @@ a {
   outline: rem(2) solid var(--color-light);
   outline-offset: rem(4);
   transition-duration: 0s !important;
+}
+
+a,
+button {
+  &[aria-label] {
+    position: relative;
+
+    &::before {
+      @include abs-center;
+      @include square(rem(44));
+
+      contant: '';
+    }
+  }
 }

@@ -1,0 +1,100 @@
+@use '../helpers' as *;
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  column-gap: rem(10);
+
+  &::before {
+    --size: #{rem(24)};
+    @include square(var(--size));
+
+    content: '';
+    flex-shrink: 0;
+
+    background-color: currentColor;
+
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+
+    @include laptop {
+      --size: #{rem(20)};
+    }
+  }
+
+  //  Header
+
+  &--home::before {
+    mask-image: url('/icons/house-icon.svg');
+  }
+
+  &--about::before {
+    mask-image: url('/icons/id-card-icon.svg');
+  }
+
+  &--projects::before {
+    mask-image: url('/icons/folders-icon.svg');
+  }
+
+  &--services::before {
+    mask-image: url('/icons/code-icon.svg');
+  }
+
+  &--contact::before {
+    mask-image: url('/icons/letter-icon.svg');
+  }
+
+  //  Footer
+
+  &--letter-svg::before {
+    mask-image: url('/icons/letter-svg-icon.svg');
+  }
+
+  &--phone::before {
+    mask-image: url('/icons/phone-icon.svg');
+  }
+
+  &--location::before {
+    mask-image: url('/icons/location-pin-icon.svg');
+  }
+
+  &--github::before {
+    mask-image: url('/icons/github-icon.svg');
+  }
+
+  &--linkedin::before {
+    mask-image: url('/icons/linkedin-icon.svg');
+  }
+
+  &--telegram::before {
+    mask-image: url('/icons/telegram-icon.svg');
+  }
+
+//  Hero
+
+  &--suit-case::before {
+    mask-image: url('/icons/suit-case-icon.svg');
+  }
+
+  &--arrow-right::before {
+    mask-image: url('/icons/arrow-right-icon.svg');
+  }
+
+  &--download::before {
+    mask-image: url('/icons/download-icon.svg');
+  }
+
+  &--education::before {
+    mask-image: url('/icons/education-icon.svg');
+  }
+
+  // Featured
+
+  &--live-demo::before {
+    mask-image: url('/icons/arrow-right-from-bracket.svg');
+  }
+}
+
+
+

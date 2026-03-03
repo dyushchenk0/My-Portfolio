@@ -1,0 +1,151 @@
+@use '../helpers' as *;
+
+.hero {
+  padding-bottom: rem(60);
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(40);
+
+    @include mobile {
+      flex-direction: column;
+      gap: rem(20);
+    }
+  }
+
+  &__body {
+    flex: 1;
+    max-width: rem(600);
+    display: flex;
+    flex-direction: column;
+    gap: rem(25);
+  }
+
+  &__subtitle {
+    width: fit-content;
+    padding: 0 rem(15);
+    font-size: rem(20);
+    border-radius: rem(20);
+    background-color: var(--color-grey-70);
+  }
+
+  .green {
+    color: var(--color-green);
+    font-weight: 700;
+    text-shadow: 0 0 5px #00ff88;
+  }
+
+  &__jobs {
+    @include fluid-text(40, 32);
+
+    font-weight: 700;
+    font-family: var(--font-family-accent);
+    color: var(--color-dark);
+  }
+
+  &__description {
+    @include fluid-text(18, 14)
+  }
+
+  &__preview {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  &__preview img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__meta {
+    display: flex;
+    gap: rem(25);
+    align-items: center;
+    font-size: rem(20);
+  }
+
+  &__meta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-grey-70);
+  }
+
+  &__actions {
+    position: relative;
+    display: flex;
+    gap: rem(20);
+    padding-bottom: rem(20);
+  }
+
+  &__actions::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-grey-70);
+  }
+
+  .btn--primary {
+    color: var(--color-light);
+    background-color: var(--color-dark);
+
+    @include hover() {
+      color: var(--color-dark);
+      background-color: var(--color-light);
+      border-color: var(--color-dark);
+    }
+  }
+
+  .btn--outline {
+    color: var(--color-light);
+    background-color: var(--color-accent);
+
+
+    @include hover() {
+      color: var(--color-accent);
+      background-color: var(--color-light);
+      border-color: var(--color-accent);
+    }
+  }
+
+//  Socials
+
+  &__socials {
+    display: flex;
+    gap: rem(15);
+  }
+
+  &__follow {
+    @include fluid-text(24, 18);
+  }
+
+  &__follow-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background-color: var(--color-grey-70);
+
+    transition: 0.3s ease;
+
+    --size: #{rem(44)};
+
+    @include square(var(--size));
+
+    @include hover() {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

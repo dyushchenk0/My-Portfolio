@@ -1,0 +1,139 @@
+@use '../helpers' as *;
+
+.footer {
+  padding-block: fluid(80, 40);
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: fluid(80, 20);
+
+    @include mobile {
+      display: inline-block;
+    }
+  }
+
+  &__menu-column {
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+    gap: fluid(18, 8);
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__menu-main-contacts {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  &__menu-main-link .icon::before {
+    background-color: #4749EF;
+  }
+
+  .is-horizontal {
+    gap: rem(10);
+    flex-direction: row;
+  }
+
+  &__menu-main-contacts-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background-color: var(--color-grey-70);
+
+    transition: 0.3s ease;
+
+    --size: #{rem(44)};
+
+    @include square(var(--size));
+  }
+
+  &__menu-main-contacts-link {
+    @include hover() {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// Form
+
+.contact__form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include mobile {
+    padding-block: rem(20);
+  }
+
+  &-input {
+    width: 100%;
+    font-size: rem(16);
+    font-weight: 300;
+    outline: none;
+    padding: rem(15);
+    border: 3px solid var(--color-grey-70);
+    border-radius: rem(12);
+  }
+
+  &-input:focus {
+    border-color: #759dde;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+
+  &-input:valid:not(:placeholder-shown) {
+    border-color: #3b82f6;
+  }
+
+  &-input:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+  }
+
+  .error-text {
+    font-size: rem(16);
+    color: #ef4444;
+    padding: rem(5);
+    display: none;
+  }
+
+  &-input:invalid:not(:placeholder-shown) + .error-text {
+    display: block;
+  }
+
+  .button__contact {
+    justify-content: flex-start;
+    align-self: flex-start;
+    font-size: rem(16);
+    font-weight: 400;
+    color: var(--color-light);
+    border: 1px solid var(--color-dark-blue-stroke);
+    background-color: var(--color-accent);
+
+    @include mobile {
+      align-self: inherit;
+      justify-content: center;
+    }
+
+    @include hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(63, 63, 255, 0.6);
+    }
+  }
+}
+
+
