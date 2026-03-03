@@ -1,0 +1,6 @@
+@use "../helpers" as *;
+
+.tag {
+  @include fluid-text(20, 14);
+  font-weight: 500;
+}

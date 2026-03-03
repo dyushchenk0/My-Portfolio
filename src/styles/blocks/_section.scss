@@ -1,0 +1,33 @@
+@use "../helpers" as *;
+
+.section {
+  &__header {
+    padding-block: fluid(60, 40);
+
+    &-info {
+      display: grid;
+      align-items: start;
+      row-gap: rem(16);
+
+      @include laptop{
+        row-gap: rem(10);
+      }
+    }
+  }
+
+  &__header-info {
+    text-align: center;
+  }
+
+  &__title {
+    @include laptop {
+      font-size: rem(38);
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    text-align: center;
+    justify-self: start;
+  }
+}

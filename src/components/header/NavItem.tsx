@@ -4,7 +4,11 @@ import Link from "next/link";
 
 import {useHeader} from "@/hooks/useHeader";
 
-export default function NavItem({isScrolled}) {
+interface NavItemProps {
+  isScrolled: boolean;
+}
+
+export default function NavItem({ isScrolled }: NavItemProps) {
   const {isActive, toggle} = useHeader();
 
   return (

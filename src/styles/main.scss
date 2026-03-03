@@ -1,25 +1,19 @@
-@use 'normalize';
-@use 'fonts';
-@use 'variables';
-@use 'utils';
-@use 'globals';
+@use './variables' as *;
+@use './normalize';
+@use './fonts';
+@use './utils' as *;
+@use './globals';
 
-@use 'blocks/icon';
-@use 'blocks/button';
-
-@use 'blocks/header';
-@use 'blocks/burger-button';
-@use 'blocks/logo';
-
-@use 'blocks/hero';
-
-@use 'blocks/about';
-
-@use 'blocks/tag';
-@use 'blocks/section';
-@use 'blocks/list';
-@use 'blocks/tile';
-@use 'blocks/card';
-
-@use 'blocks/footer';
-
+@use './blocks/icon';
+@use './blocks/button';
+@use './blocks/header';
+@use './blocks/burger-button';
+@use './blocks/logo';
+@use './blocks/hero';
+@use './blocks/about';
+@use './blocks/tag';
+@use './blocks/section';
+@use './blocks/list';
+@use './blocks/tile';
+@use './blocks/card';
+@use './blocks/footer';

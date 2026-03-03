@@ -1,0 +1,16 @@
+@use "../helpers" as *;
+
+.tile {
+  display: flex;
+  flex-direction: row;
+  gap: rem(40);
+
+  .list {
+    border-radius: rem(10);
+    &__item {
+      @include laptop {
+
+      }
+    }
+  }
+}
